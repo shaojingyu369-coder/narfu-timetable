@@ -1,0 +1,7 @@
+{
+ "name":"narfu-live-timetable-api",
+ "private":true,
+ "type":"module",
+ "engines":{"node":"22.x"},
+ "scripts":{"test":"node --test live.test.mjs","check-school":"node check-school.mjs"}
+}
