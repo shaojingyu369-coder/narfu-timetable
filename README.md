@@ -2,6 +2,8 @@
 
 课表网页：https://narfu-timetable-111621.github.io/
 
+备用课表：https://narfu-live-111621.vercel.app/
+
 公开后台：https://narfu-live-111621.vercel.app/api/timetable
 
 每次独立请求重新获取学校公开课表，解析课程时间、教师和教室，返回中俄双语。只合并同时进行的请求，不用旧课表冒充实时结果。学校读取失败返回 502/504，由网页保留已有数据并提示失败。
@@ -19,3 +21,7 @@
 ## 验证
 
 Node.js 22：`npm test` 验证改课后再次抓取、失败状态、请求合并、跨站访问和固定来源；`npm run check-school` 连接学校读取真实课表。没有第三方依赖。
+
+## 备用网页来源
+
+完整前端源码位于组织仓库 narfu-timetable-111621/narfu-timetable-111621.github.io。运行构建后，将 docs/ 内容复制到本项目 public/，再通过 Drop to Deploy 更新现有项目，即可重建备用课表。本仓库提交的 public/index.html 是最小服务说明页；完整部署包另存到当前任务输出文件。
