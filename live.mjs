@@ -14,7 +14,7 @@ export async function readSchool({fetchImpl=fetch,clock=()=>new Date()}={}){
  return {...parsed,events:parsed.events.map(enrichEvent),retrievedAt:checkedAt,checkedAt,requestStartedAt:startedAt,fresh:true,via:'live-proxy'};
 }
 
-export function createService({fetchImpl=fetch,clock=()=>new Date(),allowedOrigins=['https://narfu-timetable-111621.github.io']}={}){
+export function createService({fetchImpl=fetch,clock=()=>new Date(),allowedOrigins=['https://narfu-timetable-111621.github.io','https://narfu-live-111621.vercel.app']}={}){
  // Only overlap in-flight reads. Sequential button presses always fetch the school again.
  let pending;
  return async function handle(request){
